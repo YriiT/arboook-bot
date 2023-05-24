@@ -46,15 +46,14 @@ function start() {
       bot.sendMessage(msg.chat.id, "Извините, но я не знаю этой команды");
     }
 
-    if (photo && msg && !msg?.reply_to_message?.photo) {
+    if (photo && msg && !msg.reply_to_message.photo) {
       await bot.sendPhoto("-776565219", photo);
     }
 
     if (photo) {
-      if (msg?.reply_to_message?.photo) {
+      if (msg && msg.reply_to_message.photo) {
         console.log({ msg });
-        const file_unique_id =
-          msg?.reply_to_message.photo?.at(0)?.file_unique_id;
+        const file_unique_id = msg.reply_to_message.photo.at(0).file_unique_id;
         const DbService = new DB();
         const query = {
           photo: {
@@ -69,13 +68,12 @@ function start() {
           query,
         });
 
-        console.log({ message });
         if (message) {
           const {
             from: { id },
           } = message;
 
-          await bot.sendPhoto(id, msg?.photo.at(-1).file_id);
+          await bot.sendPhoto(id, msg.photo.at(-1).file_id);
         }
       }
     }
