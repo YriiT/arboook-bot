@@ -1,8 +1,8 @@
 FROM node:12
 
-RUN mkdir -p /arboook-bot-server/node_modules && chown -R node:node /arboook-bot
+RUN mkdir -p /arboook-bot/node_modules && chown -R node:node /arboook-bot
 
-WORKDIR /arboook-bot-server
+WORKDIR /arboook-bot
 
 COPY package*.json ./
 
