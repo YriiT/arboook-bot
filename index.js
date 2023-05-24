@@ -46,7 +46,7 @@ function start() {
       bot.sendMessage(msg.chat.id, "Извините, но я не знаю этой команды");
     }
 
-    if (photo && !msg?.reply_to_message?.photo) {
+    if (photo && msg && !msg?.reply_to_message?.photo) {
       await bot.sendPhoto("-776565219", photo);
     }
 
