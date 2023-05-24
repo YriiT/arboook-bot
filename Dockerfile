@@ -1,6 +1,6 @@
 FROM node:12
 
-RUN mkdir -p /arboook-bot-server/node_modules && chown -R node:node /arboook-bot-server
+RUN mkdir -p /arboook-bot-server/node_modules && chown -R node:node /arboook-bot
 
 WORKDIR /arboook-bot-server
 
