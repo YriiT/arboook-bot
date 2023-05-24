@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:18
 
 RUN mkdir -p /arboook-bot/node_modules && chown -R node:node /arboook-bot
 
